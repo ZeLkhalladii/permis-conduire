@@ -1,0 +1,22 @@
+<div class="row my-4 my-4">
+    <div class="col-md-8 mx-auto">
+        {{!-- <h3>activation Succes</h3> --}}
+        <div class="container" >
+            <div id="message" >
+
+            </div>
+        </div>
+        <hr>
+        <div class="card p-3">
+            <form>
+                <center><h1>account activation successful</h1></center>
+                {{!-- <input type="text" id="token" name="token"> --}}
+            </form>
+        </div>
+        <hr>
+    </div>
+</div>
+<script>
+    
+    document.getElementById('message').innerHTML = localStorage.getItem("message");
+</script>

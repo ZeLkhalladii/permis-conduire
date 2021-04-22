@@ -1,0 +1,428 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <h1>💖 Hello World!</h1>
+    <p>Welcome to your Electron application.</p>
+
+  </body>
+</html> -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Bitter|Arvo|ato&display=swap');
+
+        /* body {
+        background-image: url(https://mangetoica.com/gallery_images/homepage/background-mosaiques//bg.png);
+        display: flex;
+        } */
+
+        h1,h2,p{
+        margin: 0;
+        }
+
+        h1{
+        font-family: 'Arvo', serif;
+        font-weight: lighter;
+        font-size: 25px;
+        }
+
+        .cardtitle {
+        font-family: 'Bitter', serif;
+        font-weight: bold;
+        }
+
+        p {
+        font-family: 'Lato', sans-serif;
+        display: inline-block;
+        margin: 5px 1px;
+        font-size: 15px;
+        }
+
+        #card {
+        border: solid 2px #000;
+        border-radius: 10px;
+        box-shadow: 1px 2px 10px #000;
+        background-color: #E9EEF2;
+        margin: auto;
+        }
+
+        #card-title {
+        padding: 5px;
+        color: #fff;
+        letter-spacing: 2px;
+        text-align: center;
+        text-transform: uppercase;
+        background-color: #2C6C73;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        }
+
+        #card-id {
+        padding: 5px;
+        display: flex;
+        }
+
+        #card-number{
+        display: inherit;
+        margin-right: 50px;
+        }
+
+        #card-information {
+        display: flex;
+        padding: 5px;
+        }
+
+        #card-photo {
+        /* background: url(https://www.habbo.fr/habbo-imaging/avatarimage?hb=image&user=null&headonly=0&direction=3&head_direction=3&action=&gesture=&size=l) no-repeat, #BFAE99; */
+        /* background: url(../public/images/user-64.png) no-repeat, #BFAE99;
+        background-position: center;
+        background-repeat: none;
+        border: solid 2px #000;
+        height: 150px;
+        width: 150px; */
+        background: url(../public/images/user-128.png) no-repeat;
+        background-position: center;
+        background-repeat: none;
+        height: 150px;
+        width: 150px;
+        }
+
+        #card-detail {
+        display: flex;
+        
+        }
+
+        .card-box {
+        margin-right: 20px;
+        }
+
+        #cardsign {
+        background: no-repeat url(https://fontmeme.com/permalink/200329/2719511201202ec68d51bbc66ea58d25.png);
+        background-position: center;
+        height: 38px;
+        width: 350px;
+        }
+
+        #card-code {
+        padding: 5px;
+        background-color: #fff;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        }
+    </style>
+  </head>
+  <body>
+    
+    
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand">Dashboard admin</a>
+        <form class="d-flex">
+          <button onclick="logout()" class="btn btn-outline-success">Logout</button>
+        </form>
+      </div>
+    </nav>
+    <div class="container mt-2" >
+        <a href="dashboardadmin.html" class="btn btn-outline-success"> <i class="fas fa-chevron-left"></i> back to dashboard admin </a>
+    </div>
+    <div class="container" >
+        <div id="message" >
+
+        </div>
+    </div>
+    <hr>
+
+    
+    <div class="container" >
+        <div id="message" >
+
+        </div>
+    </div>
+    <div class="container" >
+        <nav>
+            <div class="container-fluid">
+              <!-- <a class="navbar-brand">Navbar</a> -->
+              <form class="d-flex">
+                <input class="form-control me-2" type="text" id="numero_du_Permis_recherch" placeholder="recherche avec numéro de permis" >
+                <button class="btn btn-outline-success" type="button" onclick="rechercheuser()"><i class="fas fa-search"></i>recherche avec numéro de permis</button>
+              </form>
+            </div>
+        </nav>
+    </div>
+    <hr>
+
+
+    <!-- start lhama9 -->
+
+    <!-- Button trigger modal -->
+    
+    
+    <!-- Modal -->
+    <div class="container" >
+        
+        <center><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fad fa-siren-on"></i> Enregistrer une infraction</button></center><br>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Enregistrer une infraction !</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- start -->
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Le type d'infraction</label>
+                            <input type="text" class="form-control" id="typeInfraction" placeholder="Le type d'infraction" required>
+                            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+      
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Le nombre de points déduits</label>
+                          <input type="number" class="form-control" id="nombrePointsDeduitsInfraction" placeholder="Le nombre de points déduits" required>
+                          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <input type="text" class="form-control" id="messageInfraction" placeholder="Le nombre de points déduits" required>
+                            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+      
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <center><button type="submit" onclick="addinfraction()" class="btn btn-success">Save</button></center>
+                        </div>
+                    </form>
+                    <!-- end -->
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end lhama9 -->
+    
+
+    <div class="container" id="resultatsherch" >
+        <!-- <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prenom</th>
+                <th scope="col">Email</th>
+                <th scope="col">Tel</th>
+                <th scope="col">Adresse</th>
+                <th scope="col">Numero Du Permis</th>
+                <th scope="col">Nombre De Point</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody id="table_user"> -->
+              <!-- <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr> -->
+            <!-- </tbody>
+          </table> -->
+    
+
+    <!-- START TEST -->
+
+
+
+
+        <div class="row">
+            <div class="col-sm-2">
+
+            </div>
+          <div class="col-sm-8">
+            <div id="card">
+                <div id="card-title">
+                  <h1>permis de conduire</h1>
+                </div>
+                <div id="card-id">
+                  <div id="card-number">
+                    <p class="cardtitle">Numero De Permis :</p>
+                    <p id="numero_du_Permis_user" ></p>
+                  </div>
+                    <p class="cardtitle"><strong>Note : </strong><span> <span id="nombre_de_Point_user" ></span>/30 </span></p>
+                </div>
+                <div id="card-information">
+                  <div id="card-photo"></div>
+                  <div id="card-text">
+                  <div id="card-name">
+                    <div class="card-box"></div>
+                    <p class="cardtitle">Nom :</p>
+                    <p id="name_user" ></p>
+                    <div class="card-box"></div>
+                    <p class="cardtitle">Prénom :</p>
+                    <p id="prenom_user" ></p>
+                  </div>
+                  <div id="card-detail">
+                    <div class="card-box">
+                      <p class="cardtitle">Email :</p>
+                      <p id="email_user" ></p>
+                    </div>
+                    <div class="card-box">
+                      <p class="cardtitle"></p>
+                      <p ></p>
+                    </div>
+                    <div class="card-box">
+                      <p class="cardtitle">Telephone :</p>
+                      <p id="tel_user" ></p>
+                    </div>
+                  </div>
+                  <div id="card-sign">
+                    <p class="cardtitle">Address :</p>
+                    <p id="adresse_user" ></p>
+                    <!-- <div id="cardsign"></div> -->
+                  </div> 
+                  </div>
+                </div>
+                <div id="card-code">
+                  <p>
+                    ID USER : <span id="id_user" ></span>
+                  </p>
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-2">
+              
+          </div>
+        </div>
+    </div>
+
+    <!-- END TEST -->
+
+    <hr>
+
+    <!-- <div class="container"  >
+        <div class="row">
+            <div class="col-sm-2">
+                
+            </div>
+            <div class="d-grid gap-2 col-sm-8">
+                <button class="btn btn-primary" type="button">déduire le nombre des points</button>
+            </div>
+            <div class="col-sm-2">
+                
+            </div>
+        </div>
+    </div> -->
+    <!-- <hr> -->
+    <!--<div class="container"  >
+        <div class="row">
+            <div class="col-sm-2">
+                
+            </div>
+            <div class="d-grid gap-2 col-sm-8">
+                
+                 <form>
+                    <div class="mb-3">
+                        <label class="form-label">Le type d'infraction</label>
+                        <input type="text" class="form-control" id="typeInfraction" placeholder="Le type d'infraction" required>
+  
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Le nombre de points déduits</label>
+                      <input type="number" class="form-control" id="nombrePointsDeduitsInfraction" placeholder="Le nombre de points déduits" required>
+
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Message</label>
+                        <input type="text" class="form-control" id="messageInfraction" placeholder="Le nombre de points déduits" required>
+  
+                    </div>
+                    <button type="submit" onclick="addinfraction()" class="btn btn-primary">Submit</button>
+                </form> 
+
+
+
+
+            </div>
+            <div class="col-sm-2">
+                
+            </div>
+        </div>
+    </div>-->
+
+    <!-- <hr> -->
+
+    <center><h1>List D'infraction</h1></center>
+    <div class="container" id="table_user_infraction">
+        <!-- <div class="card mb-4">
+            <div class="card-header">
+              infraction : 1
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Type Dinfraction : </h5>
+              <h5 class="card-title">nombre de Points Deduits I'nfraction : </h5>
+              <p class="card-text"><strong>Message : </strong>  With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div> -->
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../scripts/userfind.js">
+    
+    </script>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
